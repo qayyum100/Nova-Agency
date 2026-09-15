@@ -2,6 +2,8 @@
 
 import { ArrowUpRight, Check, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import CurvedInput from "./CurvedInput";
+import ScrollReveal from "./ScrollReveal";
 
 type FormValues = { name: string; email: string; message: string };
 type Errors = Partial<Record<keyof FormValues, string>>;
@@ -48,9 +50,10 @@ export default function Contact() {
       <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-32 lg:px-10 lg:py-32">
         <div>
           <p className="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-glow">Start a conversation</p>
-          <h2 className="max-w-lg text-5xl font-semibold leading-[0.92] tracking-[-0.07em] text-white sm:text-7xl">Have a big idea? Give it a signal.</h2>
+          <ScrollReveal><h2 className="max-w-lg text-5xl font-semibold leading-[0.92] tracking-[-0.07em] text-white sm:text-7xl">Have a big idea? Give it a signal.</h2></ScrollReveal>
           <p className="mt-8 max-w-sm text-sm leading-relaxed text-soft">Tell us what you are building, where you want to go, and what is getting in the way.</p>
           <a href="mailto:hello@novaagency.studio" className="group mt-10 inline-flex items-center gap-2 text-sm text-white hover:text-glow">hello@novaagency.studio <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+          <CurvedInput placeholder="david@novaagency.studio" buttonText="Get Started" theme="dark" bend={28} height={54} width={450} onSubmit={(value) => { window.location.href = `mailto:hello@novaagency.studio?subject=Project inquiry&body=Reply to: ${value}`; }} />
         </div>
         {submitted ? (
           <div className="flex min-h-[420px] flex-col items-center justify-center border border-glow/40 bg-glow/5 p-8 text-center">
