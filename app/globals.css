@@ -62,8 +62,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   mix-blend-mode: screen;
 }
 
+.services-section::after { position: absolute; inset: 0; z-index: -1; background: rgba(8, 9, 13, 0.74); content: ""; pointer-events: none; }
+.services-molten, .molten-metal { width: 100%; height: 100%; }
+.molten-metal { display: block; opacity: .82; }
+.services-section > .mx-auto { position: relative; z-index: 1; }
+
 .glow-cursor { position: relative; isolation: isolate; }
 .glow-cursor-halo { position: absolute; top: var(--cursor-y, 50%); left: var(--cursor-x, 50%); z-index: 0; width: 260px; height: 260px; border-radius: 999px; background: radial-gradient(circle, color-mix(in srgb, var(--cursor-color) 24%, transparent), color-mix(in srgb, var(--cursor-secondary) 10%, transparent) 36%, transparent 70%); pointer-events: none; transform: translate(-50%, -50%); transition: top 180ms ease-out, left 180ms ease-out; }
+.glow-cursor > .glow-cursor-halo { position: absolute; z-index: 0; display: block; width: 260px; height: 260px; }
 .glow-cursor > * { position: relative; z-index: 1; }
 
 .logo-loop { position: relative; overflow: hidden; margin: 24px 0 38px; padding: 12px 0; color: var(--soft); white-space: nowrap; }

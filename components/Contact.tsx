@@ -3,6 +3,7 @@
 import { ArrowUpRight, Check, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import CurvedInput from "./CurvedInput";
+import GlowCursor from "./GlowCursor";
 import ScrollReveal from "./ScrollReveal";
 
 type FormValues = { name: string; email: string; message: string };
@@ -46,6 +47,7 @@ export default function Contact() {
   }
 
   return (
+    <GlowCursor color="#67E8F9" secondaryColor="#A78BFA" trailLength={40} trailWidth={8} trailTaper={0.8} followSpeed={0.16} glowIntensity={1.9} glowSpread={1.2} hotspot={0.65} brightness={1.25} opacity={1} pulseSpeed={1.1} noiseStrength={0.035} idleFade idleTimeout={700} fadeDuration={900} blendMode="screen">
     <section id="contact">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-32 lg:px-10 lg:py-32">
         <div>
@@ -84,5 +86,6 @@ export default function Contact() {
         )}
       </div>
     </section>
+    </GlowCursor>
   );
 }

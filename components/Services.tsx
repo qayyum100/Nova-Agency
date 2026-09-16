@@ -3,6 +3,7 @@ import FlowingMenu from "./FlowingMenu";
 import MagicBento from "./MagicBento";
 import ScrollReveal from "./ScrollReveal";
 import LogoLoop from "./LogoLoop";
+import MoltenMetal from "./MoltenMetal";
 
 const services = [
   { number: "01", title: "UI/UX Design", description: "Interfaces with clarity, character, and just enough friction to make every interaction matter.", icon: Layers3 },
@@ -13,7 +14,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="border-b border-white/10">
+    <section id="services" className="services-section relative isolate border-b border-white/10">
+      <div className="services-molten absolute inset-0 -z-10"><MoltenMetal color1="#5227FF" color2="#FF9FFC" color3="#FFFFFF" speed={0.35} scale={4} detail={3} glow={1.6} coreSize={0.1} swirl={1} fold={-0.2} blackPoint={0.05} brightness={1.3} colorMode="molten" grain grainIntensity={0.05} mouseInteraction mouseStrength={0.3} opacity={1} /></div>
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
         <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
